@@ -10,7 +10,8 @@
             * Description: Uses the form to create a simple HTML form
             */
         
-            session_start();
+            session_start();            
+            $_SESSION['appStarted'] = true;            
             $_SESSION['accessTime'] = date("M/d/Y g:i:sa");
             print "This is page 1<br />";
             print "You accessed the application at: " . $_SESSION['accessTime'];
