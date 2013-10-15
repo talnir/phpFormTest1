@@ -6,9 +6,16 @@
     </head>
     <body>
         <?php
-        /* Script name: buildForm
-        * Description: Uses the form to create a simple HTML form
-        */
+            /* Script name: buildForm
+            * Description: Uses the form to create a simple HTML form
+            */
+        
+            session_start();
+            $_SESSION['accessTime'] = date("M/d/Y g:i:sa");
+            print "This is page 1<br />";
+            print "You accessed the application at: " . $_SESSION['accessTime'];
+            print "<div><a href=\"testcookie.php\">Continue to next page</a></div>";
+        
             require_once("Form1.php");
             $phone_form = new Form1("process.php","Submit Phone");
             $phone_form->addField("first_name","First Name");
